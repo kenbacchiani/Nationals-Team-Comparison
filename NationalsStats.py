@@ -1,4 +1,4 @@
-#Author:Ken Bacchiani
+#Author:Ken Bacchiani 
 #Program to graphically compare the win record of two Nationals teams in history
 #Uses pybaseball's schedule and record API and maplotlib.pyplot with numpy
 
