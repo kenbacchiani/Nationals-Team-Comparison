@@ -5,10 +5,38 @@
 from pybaseball import schedule_and_record
 import numpy as nump
 import matplotlib.pyplot as plt
+from datetime import datetime
 
-
-year1 = int(input("Enter the year for the first Nationals Team. "))
-year2 = int(input("Enter the year for the second Nationals Team. "))
+today = datetime.today()
+currentY = today.year
+firstYear = 2005
+valid = False
+while(not valid):
+    year1 = int(input("Enter the year for the first Nationals Team. "))
+    if((year1 < firstYear) or (year1 > currentY)):
+        if(year1 < firstYear):
+            print("Year entered was before Nationals first season(2005). Please enter a year 2005 or later.")
+            continue
+        else:
+            print("Year entered was after this current year and therefore a season doesn't exist. Please enter a year %i or earlier." % currentY)
+            continue
+    if(year1 == 2020):
+        print("Remember, 2020 was a COVID-19 shortened season and only 60 games were played versus the normal 162 for other years.")
+    valid = True
+valid = False
+while(not valid):
+    year2 = int(input("Enter the year for the second Nationals Team. "))
+    if((year2 < firstYear) or (year2 > currentY)):
+        if(year2 < firstYear):
+            print("Year entered was before Nationals first season(2005). Please enter a year 2005 or later.")
+            continue
+        else:
+            print("Year entered was after this current year and therefore a season doesn't exist. Please enter a year %i or earlier." % currentY)
+            continue
+    if(year2 == 2020):
+        print("Remember, 2020 was a COVID-19 shortened season and only 60 games were played versus the normal 162 for other years.")
+    valid = True
+        
 
 nats1 = schedule_and_record(year1, 'WSN')
 nats2 = schedule_and_record(year2, 'WSN')
